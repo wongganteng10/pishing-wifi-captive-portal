@@ -25,10 +25,12 @@ Pastikan sistem Anda memenuhi persyaratan berikut:
 Instal paket-paket berikut sebelum menjalankan skrip:
 
 ```bash
+# Update sistem terlebih dahulu
 sudo apt update
-sudo apt install hostapd dnsmasq lighttpd isc-dhcp-server
+
 # Install paket-paket utama
 sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng
+
 # Untuk monitoring jaringan
 sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent
 ```
