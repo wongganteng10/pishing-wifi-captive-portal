@@ -1,4 +1,6 @@
 // <script type="text/javascript">
+// javascript versi v0.1
+
 document.login.username.focus();
 
 const loginForm = document.getElementsByName("login")[0];
