@@ -1,4 +1,6 @@
 // <script type="text/javascript">
+// javascript versi v0.2
+
 // Mengarahkan kursor otomatis ke kolom username ketika halaman dibuka
 document.login.username.focus();
 
