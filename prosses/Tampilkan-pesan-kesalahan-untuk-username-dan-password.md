@@ -24,7 +24,7 @@ Tambahkan tepat di bawah input username dan password:
 
 Tambahkan untuk perintah loading sebelum perintah javascript
 ```html
-<div id="loading" style="display:none; text-align:center; margin-top:20px;">
+<div id="loading" style="display:none; text-align:center; margin-top:20px;"></div>
 ```
 
 ---
