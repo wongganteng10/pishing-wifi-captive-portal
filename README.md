@@ -35,3 +35,20 @@ sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools 
 # Untuk monitoring jaringan
 sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent
 ```
+
+Atau download 
+
+```bash
+## ===========================================
+mkdir -p ~/deb-wifi-pishing
+cd ~/deb-wifi-pishing
+sudo apt-get reinstall --download-only -o Dir::Cache::archives="./" hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng wireless-tools iw dos2unix -y
+
+
+
+## ===========================================
+mkdir -p ~/deb-full-pishing
+cd ~/deb-full-pishing
+sudo apt-get reinstall --download-only -o Dir::Cache::archives="./" hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent dos2unix -y
+
+```
