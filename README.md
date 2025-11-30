@@ -30,10 +30,12 @@ sudo apt update
 sudo apt install -y hostapd dnsmasq lighttpd isc-dhcp-server dos2unix
 
 # Install paket-paket utama
-sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng dos2unix
+sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng dos2unix wireless-tools iw
+```
 
-# Untuk monitoring jaringan
-sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent dos2unix
+```bash
+# Untuk monitoring jaringan (Opsional)
+sudo apt install -y rfkill tcpdump netfilter-persistent iptables-persistent dos2unix
 ```
 
 Atau download 
