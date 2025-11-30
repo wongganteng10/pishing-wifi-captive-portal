@@ -25,7 +25,7 @@ loginForm.addEventListener("submit", function (e) {
         document.getElementById("title").style.display = "none"; // sembunyikan title pada blok   <h2 id="title">Sign In</h2>
         e.target.style.display = "none";
         document.getElementById("loading").style.display = "block"; // sembunyikan title pada blok   <div id="loading" style="display:none; text-align:center; margin-top:20px;"></div>
-      document.getElementById("loading").innerHTML = "Mengirim data ke status.htm...";
+        document.getElementById("loading").innerHTML = "Mengirim data ke status.htm...";
 
         // Jalankan proses setelah jeda 2,5 detik
         setTimeout(() => {
