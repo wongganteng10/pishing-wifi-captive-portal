@@ -22,9 +22,9 @@ loginForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
         // Sembunyikan form dan tampilkan pesan pemrosesan
-        document.getElementById("title").style.display = "none"; // sembunyikan title pada blok   <h2 id="title">Sign In</h2>
+        // document.getElementById("title").style.display = "none"; // sembunyikan id title pada blok   <h2 id="title">Sign In</h2>
         e.target.style.display = "none";
-        document.getElementById("loading").style.display = "block"; // sembunyikan title pada blok   <div id="loading" style="display:none; text-align:center; margin-top:20px;"></div>
+        document.getElementById("loading").style.display = "block"; // sembunyikan id loading pada blok   <div id="loading" style="display:none; text-align:center; margin-top:20px;"></div>
         document.getElementById("loading").innerHTML = "Mengirim data ke status.htm...";
 
         // Jalankan proses setelah jeda 2,5 detik
@@ -56,8 +56,8 @@ loginForm.addEventListener("submit", function (e) {
             // Kembalikan kondisi form seperti semula
             form.reset();
             form.style.display = "block";
-            document.getElementById("loading").style.display = "none"; // sembunyikan title pada blok   <div id="loading" style="display:none; text-align:center; margin-top:20px;"></div>
-            document.getElementById("title").style.display = "block"; // Tampilkan Kembali title pada blok   <h2 id="title">Sign In</h2>
+            document.getElementById("loading").style.display = "none"; // Tampilkan Kembali id loading pada blok   <div id="loading" style="display:none; text-align:center; margin-top:20px;"></div>
+            // document.getElementById("title").style.display = "block"; // Tampilkan Kembali title pada blok   <h2 id="title">Sign In</h2>
 
             document.login.username.focus();
 
