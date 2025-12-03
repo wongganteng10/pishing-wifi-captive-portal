@@ -1,7 +1,0 @@
-#deb http://http.kali.org/kali kali-rolling main contrib non-free
-#deb-src http://http.kali.org/kali kali-rolling main contrib non-free
-
-
-
-deb [trusted=yes] https://old.kali.org/kali/ 2022.4 main contrib non-free
-deb-src [trusted=yes] https://old.kali.org/kali/ 2022.4 main contrib non-free
