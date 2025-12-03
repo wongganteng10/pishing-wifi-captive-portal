@@ -4,8 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-
-## ⚙️ paket yang harus di install untuk menjalankan config 
+## ⚙️ paket yang harus di install untuk menjalankan file config 
 
 Instal paket-paket berikut sebelum menjalankan skrip:
 
@@ -14,13 +13,15 @@ Instal paket-paket berikut sebelum menjalankan skrip:
 sudo apt update
 
 # Install paket-paket utama
-sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables dos2unix wireless-tools iw net-tools aircrack-ng procps
-```
-```bash
-# Untuk monitoring jaringan (Opsional)
-sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent
+sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables xterm net-tools procps aircrack-ng dos2unix wireless-tools iw
 ```
 
+```bash
+# Untuk monitoring jaringan (Opsional)
+sudo apt install -y rfkill tcpdump netfilter-persistent iptables-persistent
+```
+
+## ⚙️ file config 
 * dhcpd.conf
 * dnsmasq.conf
 * hostapd.conf
@@ -47,7 +48,7 @@ Pastikan sistem Anda memenuhi persyaratan berikut:
 ### 📦 Paket yang Dibutuhkan
 
 Instal paket-paket berikut sebelum menjalankan skrip:
-
+* xterm
 * hostapd
 * isc-dhcp-server
 * dnsmasq
@@ -61,13 +62,33 @@ Instal paket-paket berikut sebelum menjalankan skrip:
 * procps
 
 
+
 ```bash
 # Update sistem terlebih dahulu
 sudo apt update
 
 # Install paket-paket utama
-sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables dos2unix wireless-tools iw net-tools aircrack-ng procps  
+sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables xterm net-tools procps aircrack-ng dos2unix wireless-tools iw
+```
 
+```bash
 # Untuk monitoring jaringan (Opsional)
-sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent
+sudo apt install -y rfkill tcpdump netfilter-persistent iptables-persistent
+```
+
+Atau download 
+
+```bash
+## ===========================================
+mkdir -p ~/deb-wifi-pishing
+cd ~/deb-wifi-pishing
+sudo apt-get reinstall --download-only -o Dir::Cache::archives="./" hostapd isc-dhcp-server dnsmasq lighttpd iptables xterm net-tools procps aircrack-ng dos2unix wireless-tools iw -y
+
+
+
+## ===========================================
+mkdir -p ~/deb-full-pishing
+cd ~/deb-full-pishing
+sudo apt-get reinstall --download-only -o Dir::Cache::archives="./" hostapd isc-dhcp-server dnsmasq lighttpd iptables xterm net-tools procps aircrack-ng dos2unix wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent -y
+
 ```

