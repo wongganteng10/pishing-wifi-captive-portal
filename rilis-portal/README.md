@@ -3,9 +3,32 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+
+
+## ⚙️ paket yang harus di install untuk menjalankan config 
+
+Instal paket-paket berikut sebelum menjalankan skrip:
+
+```bash
+# Update sistem terlebih dahulu
+sudo apt update
+
+# Install paket-paket utama
+sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables dos2unix wireless-tools iw net-tools aircrack-ng procps
+```
+```bash
+# Untuk monitoring jaringan (Opsional)
+sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent
+```
+
+* dhcpd.conf
+* dnsmasq.conf
+* hostapd.conf
+* lighttpd.conf
+
 ## 🌟 Deskripsi Proyek
 
-Proyek ini adalah sebuah skrip otomatisasi yang bertujuan untuk mengatur lingkungan **Evil Twin Access Point (AP)** dan **Captive Portal** menggunakan layanan jaringan standar Linux seperti `hostapd`, `dnsmasq`, dan `lighttpd`.
+Proyek ini adalah sebuah skrip otomatisasi yang bertujuan untuk mengatur lingkungan **Evil Twin Access Point (AP)** dan **Captive Portal** menggunakan layanan jaringan standar Linux seperti `hostapd`, `dnsmasq`, `isc-dhcp-server` dan `lighttpd`.
 
 Tujuan utamanya adalah untuk mendemonstrasikan kerentanan jaringan dengan meniru Access Point yang sah dan menangkap kredensial pengguna melalui halaman *login* palsu.
 
@@ -25,32 +48,26 @@ Pastikan sistem Anda memenuhi persyaratan berikut:
 
 Instal paket-paket berikut sebelum menjalankan skrip:
 
+* hostapd
+* isc-dhcp-server
+* dnsmasq
+* lighttpd
+* iptables
+* dos2unix
+* wireless-tools
+* iw
+* net-tools
+* aircrack-ng
+* procps
+
+
 ```bash
+# Update sistem terlebih dahulu
 sudo apt update
-sudo apt install -y hostapd dnsmasq lighttpd isc-dhcp-server dos2unix
 
 # Install paket-paket utama
-sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng dos2unix wireless-tools iw
-```
+sudo apt install -y hostapd isc-dhcp-server dnsmasq lighttpd iptables dos2unix wireless-tools iw net-tools aircrack-ng procps  
 
-```bash
 # Untuk monitoring jaringan (Opsional)
-sudo apt install -y rfkill tcpdump netfilter-persistent iptables-persistent dos2unix
-```
-
-Atau download 
-
-```bash
-## ===========================================
-mkdir -p ~/deb-wifi-pishing
-cd ~/deb-wifi-pishing
-sudo apt-get reinstall --download-only -o Dir::Cache::archives="./" hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng wireless-tools iw dos2unix -y
-
-
-
-## ===========================================
-mkdir -p ~/deb-full-pishing
-cd ~/deb-full-pishing
-sudo apt-get reinstall --download-only -o Dir::Cache::archives="./" hostapd isc-dhcp-server dnsmasq lighttpd iptables net-tools procps aircrack-ng wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent dos2unix -y
-
+sudo apt install -y wireless-tools iw rfkill tcpdump netfilter-persistent iptables-persistent
 ```
